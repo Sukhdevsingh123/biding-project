@@ -1,0 +1,10 @@
+<%- include('layout', { title: 'Home', user }) %>
+
+<h2>Available Items</h2>
+<ul>
+  <% items.forEach(item => { %>
+    <li>
+      <a href="/items/<%= item.id %>"><%= item.name %></a> - Current Price: $<%= item.currentPrice %>
+    </li>
+  <% }) %>
+</ul>

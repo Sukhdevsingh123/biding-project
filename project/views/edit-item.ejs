@@ -1,0 +1,16 @@
+<%- include('layout', { title: 'Edit Item', user }) %>
+
+<h2>Edit Item</h2>
+<form action="/items/<%= item.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+  <label for="name">Name:</label>
+  <input type="text" name="name" value="<%= item.name %>" required>
+  <label for="description">Description:</label>
+  <textarea name="description" required><%= item.description %></textarea>
+  <label for="startingPrice">Starting Price:</label>
+  <input type="number" name="startingPrice" step="0.01" value="<%= item.startingPrice %>" required>
+  <label for="endTime">End Time:</label>
+  <input type="datetime-local" name="endTime" value="<%= new Date(item.endTime).toISOString().slice(0, 16) %>" required>
+  <label for="image">Image:</label>
+  <input type="file" name="image">
+  <button type="submit">Update Item</button>
+</form>

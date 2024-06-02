@@ -1,0 +1,52 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title><%= title %></title>
+</head>
+<body>
+  <header>
+    <h1>Auction Platform</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <% if (user) { %>
+          <li><a href="/items/new">Create Item</a></li>
+          <li><a href="/users/profile">Profile</a></li>
+          <li><a href="/users/logout">Logout</a></li>
+        <% } else { %>
+          <li><a href="/users/login">Login</a></li>
+          <li><a href="/users/register">Register</a></li>
+        <% } %>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <!-- <%= body %> -->
+  <!-- </main>
+</body>
+</html> -->
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Auction Site</h1>
+    <% if (user) { %>
+      <p>Welcome, <%= user.username %>! <a href="/logout">Logout</a></p>
+    <% } else { %>
+      <p><a href="/users/login">Login</a> | <a href="/users/register">Register</a></p>
+    <% } %>
+  </header>
+  <main>
+    <%- body %>
+  </main>
+</body>
+</html>
